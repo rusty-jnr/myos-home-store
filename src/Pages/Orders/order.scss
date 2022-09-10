@@ -1,0 +1,119 @@
+.order_box {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  min-height: 60vh;
+  h3 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 0;
+    sup {
+      font-size: 14px;
+      margin-left: 5px;
+    }
+  }
+  & .order_info_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+    table {
+      width: 100%;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+      border-collapse: collapse;
+      thead {
+        tr {
+          border: 1px solid #e3e3e3;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          th {
+            font-weight: 500;
+            &:first-child {
+              width: 30px;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          border: 1px solid #e3e3e3;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          td {
+            font-size: 14px;
+            img {
+              &.close {
+                cursor: pointer;
+              }
+            }
+            i {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      th,
+      td {
+        white-space: nowrap;
+        padding: 20px;
+        text-align: left;
+        &.price {
+          font-weight: 600;
+        }
+      }
+    }
+    & .expanded {
+      background-color: rgba(241, 241, 241, 0.3);
+      td {
+        box-shadow: inset 0 3px 6px -3px rgba(0, 0, 0, 0.2);
+        padding: 0;
+        & .moreInfo {
+          padding: 15px;
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 20px;
+          & .product_info {
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            @media(max-width: 1024px) {
+              width: fit-content;
+            }
+            & .img {
+              width: 100px;
+              padding: 10px;
+              img {
+                width: 100%;
+              }
+            }
+            & .item_details {
+              padding: 10px;
+              width: calc(100% - 100px);
+              h3 {
+                font-size: 16px;
+                margin: 0 0 10px 0;
+              }
+              p {
+                font-size: 13px;
+                margin: 0 0 6px 0;
+                color: #5d5f5f;
+                strong {
+                  color: #000;
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+          @media(max-width: 1024px) {
+            grid-template-columns: 1fr;
+          }
+        }
+      }
+      &:hover {
+        background-color: none;
+      }
+    }
+  }
+}
